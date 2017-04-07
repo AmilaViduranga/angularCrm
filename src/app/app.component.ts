@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {BasicInfoComponent} from './Components/BasicInfoComponent/basicinfo.component';
+import {NavbarComponent} from './Components/NavbarComponent/navbar.component';
+import {StudentInfoPanelComponent} from './Components/StudentInfoPanelComponent/studentinfopanel.component';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+
 }
