@@ -1,0 +1,77 @@
+<div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        <h3 class="panel-title pull-left">Student Details</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped" [mfData]="students" #mf="mfDataTable" [mfRowsOnPage]="5">
+            <thead>
+                <tr>
+                    <th>
+                        <mfDefaultSorter by="studentId">Student id</mfDefaultSorter>
+                    </th>
+                    <th>
+                        <mfDefaultSorter by="reference">Reference</mfDefaultSorter>
+                    </th>
+                    <th>
+                        <mfDefaultSorter by="name">Name</mfDefaultSorter>
+                    </th>
+                    <th>
+                        <mfDefaultSorter by="school">School</mfDefaultSorter>
+                    </th>
+                    <th>
+                        <mfDefaultSorter by="dob">DOB</mfDefaultSorter>
+                    </th>
+                    <th>
+                        <mfDefaultSorter by="country">Country</mfDefaultSorter>
+                    </th>
+                    <th>
+                        <mfDefaultSorter by="grade">Grade</mfDefaultSorter>
+                    </th>
+                    <th>
+                        <mfDefaultSorter by="email">Email</mfDefaultSorter>
+                    </th>
+                    <th>
+                        <mfDefaultSorter by="mobile">Mobile</mfDefaultSorter>
+                    <th>
+                        <mfDefaultSorter>Options</mfDefaultSorter>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of students">
+                    <td>{{student.std_id}}</td>
+                    <td>{{student.reference}}</td>
+                    <td>{{student.firstName}}</td>
+                    <td>{{student.school}}</td>
+                    <td>{{student.dob}}</td>
+                    <td>{{student.country_name}}</td>
+                    <td>{{student.grade}}</td>
+                    <td>{{student.email}}</td>
+                    <td>{{student.mobile}}</td>
+                    <td>
+                      <a [routerLink]="['/individualstudent', student.std_id]" (click)="setId(student.std_id)">
+                          <span class="label label-success btnlabel">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                            View
+                          </span>
+                      </a>
+                      <a [routerLink]="['/individualstudent', student.std_id]">
+                        <span class="label label-warning btnlabel">
+                          <i class="fa fa-pencil" aria-hidden="true"></i>
+                          Edit
+                        </span>
+                      </a>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">
+                        <mfBootstrapPaginator></mfBootstrapPaginator>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
