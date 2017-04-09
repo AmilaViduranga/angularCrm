@@ -11,7 +11,7 @@ export class studentService {
   private headers: Headers;
 
   constructor(private http: Http) {
-    this.token = "4a2e566eac65bfd631d45e8630b4fcbfe9185735d8be6c92296d4d6b288b7e8c";
+    this.token = "551c5b0db24ae3354cb89dbf273aa5c03dfb2f5417a3a5d7620a2ad1f38d2577";
       this.actionUrl = 'http://localhost:8009/api/students/';
       this.headers = new Headers();
       this.headers.append('Content-Type', 'application/json');
