@@ -13,39 +13,17 @@
       <th>Card number</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Otto</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Otto</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Otto</td>
+  <tbody *ngIf="transactionInfo">
+    <tr *ngFor="let transaction of transactionInfo">
+      <th scope="row">{{transaction.id}}</th>
+      <td>{{transaction.invoiceNo}}</td>
+      <td>{{transaction.student_id}}</td>
+      <td>{{transaction.payment_method}}</td>
+      <td>{{transaction.date}}</td>
+      <td>{{transaction.paid_amount}}</td>
+      <td>{{transaction.paid_amount}}</td>
+      <td>{{transaction.cardholder_name}}</td>
+      <td>{{transaction.card_no}}</td>
     </tr>
   </tbody>
 </table>

@@ -5,14 +5,14 @@
         <li><a href="#yellow" data-toggle="tab">Subscription</a></li>
         <li><a href="#green" data-toggle="tab">Transaction History</a></li>
         <li><a href="#blue" data-toggle="tab">Communication</a></li>
-        <li><a href="#history" data-toggle="tab">History</a></li>
+        <!-- <li><a href="#history" data-toggle="tab">History</a></li> -->
     </ul>
     <div id="my-tab-content" class="tab-content">
         <div class="tab-pane active" id="red">
-            <basic-info></basic-info>
+            <basic-info [student]="student"></basic-info>
         </div>
         <div class="tab-pane" id="orange">
-            <school-info></school-info>
+            <school-info [studentDetails]="student"></school-info>
         </div>
         <div class="tab-pane" id="yellow">
             <subscription-info></subscription-info>
@@ -23,8 +23,8 @@
         <div class="tab-pane" id="blue">
             <communication-info></communication-info>
         </div>
-        <div class="tab-pane" id="history">
+        <!-- <div class="tab-pane" id="history">
             <history-panel></history-panel>
-        </div>
+        </div> -->
     </div>
 </div>

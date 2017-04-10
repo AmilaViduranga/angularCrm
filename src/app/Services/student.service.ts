@@ -11,8 +11,8 @@ export class studentService {
   private headers: Headers;
 
   constructor(private http: Http) {
-    this.token = "551c5b0db24ae3354cb89dbf273aa5c03dfb2f5417a3a5d7620a2ad1f38d2577";
-      this.actionUrl = 'http://localhost:8009/api/students/';
+    this.token = "212a0aaaef265822490cfe8a87ef1d6af3e19afcba60121b143463e2776dc107";
+      this.actionUrl = 'http://localhost:8009/api/';
       this.headers = new Headers();
       this.headers.append('Content-Type', 'application/json');
       this.headers.append('Accept', 'application/json');
@@ -23,15 +23,27 @@ export class studentService {
   }
 
   getAllStudents() {
-    return this.http.get(this.actionUrl + this.token)
+    return this.http.get(this.actionUrl + "students/"+this.token)
       .map(res => res.json())
       .catch(this.handleError);
   }
 
   getSpecificStudent(stdId) {
-      return this.http.get(this.actionUrl+'view/'+this.token+'/'+stdId)
+      return this.http.get(this.actionUrl+'students/view/'+this.token+'/'+stdId)
         .map(res => res.json())
         .catch(this.handleError);
+  }
+
+  getSubscriptionInfoOfOneStudent(stdId) {
+    return this.http.get(this.actionUrl + 'subscription/view/'+ this.token + '/'+ stdId)
+      .map(res => res.json())
+      .catch(this.handleError);
+  }
+
+  getStudentTransactionInfoOfOne(stdId) {
+    return this.http.get(this.actionUrl + "transaction/view/" + this.token + "/" + stdId)
+      .map(res => res.json())
+      .catch(this.handleError);
   }
 
   private handleError(error: Response) {
