@@ -12,6 +12,11 @@ import {studentService} from '../../Services/student.service';
 export class StudentHomeComponent{
   students: any[];
   userId: any;
+  public filterQuery = "";
+  public rowsOnPage = 10;
+  public sortBy = "email";
+  public sortOrder = "asc";
+
   constructor(private _service: studentService) {
     this.loadStudents();
   }
@@ -19,11 +24,18 @@ export class StudentHomeComponent{
   loadStudents() {
     this._service.getAllStudents()
       .subscribe(
-        students => this.students = students
+        (students) => {
+          this.students = students;
+        }
       );
   }
 
   setId(id) {
     this.userId = id;
+  }
+
+
+  public toInt(num: string) {
+    return +num;
   }
 }

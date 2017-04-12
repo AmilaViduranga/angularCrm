@@ -5,9 +5,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {HistoryModule} from './Components/HistoryTaskComponent/history.module';
-import {DataTableModule} from "angular2-datatable";
+import { HistoryModule } from './Components/HistoryTaskComponent/history.module';
 import { RouterModule }   from '@angular/router';
+import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
+import {DataTableModule} from "angular2-datatable";
 /*
  * component imported
  */
@@ -25,6 +26,7 @@ import {TransactionComponent} from './Components/TransactionHistoryComponent/tra
 import {CommunicationComponent} from './Components/CommunicationComponent/communication.component';
 import {HistoryComponent} from './Components/HistoryComponent/history.component';
 import {StudentHomeComponent} from './Components/StudentHomeComponent/studenthome.component';
+import { DataFilterPipe }   from './Components/data-filter';
 /*
  * service imported
  */
@@ -45,7 +47,8 @@ import {studentService} from './Services/student.service';
     TransactionComponent,
     CommunicationComponent,
     HistoryComponent,
-    StudentHomeComponent
+    StudentHomeComponent,
+    DataFilterPipe
   ],
   imports: [
     DataTableModule,
@@ -53,6 +56,7 @@ import {studentService} from './Services/student.service';
     FormsModule,
     HttpModule,
     HistoryModule,
+    Ng2FilterPipeModule,
     RouterModule.forRoot([
       {
         path: 'students',
