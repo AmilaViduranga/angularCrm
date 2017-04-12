@@ -26,11 +26,16 @@ import {TransactionComponent} from './Components/TransactionHistoryComponent/tra
 import {CommunicationComponent} from './Components/CommunicationComponent/communication.component';
 import {HistoryComponent} from './Components/HistoryComponent/history.component';
 import {StudentHomeComponent} from './Components/StudentHomeComponent/studenthome.component';
-import { DataFilterPipe }   from './Components/data-filter';
+import {SubscriptionAllComponent} from './Components/SubscriptionAllComponent/subscriptionall.component';
 /*
  * service imported
  */
 import {studentService} from './Services/student.service';
+/*
+ * filters imported
+ */
+import { DataFilterPipe }   from './Components/data-filter';
+import { SubscriptionFilterPipe }   from './Components/subscription-filter';
 
 @NgModule({
   declarations: [
@@ -48,7 +53,9 @@ import {studentService} from './Services/student.service';
     CommunicationComponent,
     HistoryComponent,
     StudentHomeComponent,
-    DataFilterPipe
+    DataFilterPipe,
+    SubscriptionFilterPipe,
+    SubscriptionAllComponent
   ],
   imports: [
     DataTableModule,
@@ -70,6 +77,10 @@ import {studentService} from './Services/student.service';
       {
         path: 'individualstudent/:id',
         component: IndividualUserComponent,
+      },
+      {
+        path: 'subscriptionAll',
+        component: SubscriptionAllComponent
       }
     ])
   ],

@@ -13,7 +13,7 @@ export class StudentHomeComponent{
   students: any[];
   userId: any;
   public filterQuery = "";
-  public rowsOnPage = 10;
+  public rowsOnPage = 5;
   public sortBy = "email";
   public sortOrder = "asc";
 
