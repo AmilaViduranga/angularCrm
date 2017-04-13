@@ -1,109 +1,115 @@
-<div class="panel panel-default">
-    <div class="panel-heading clearfix">
-        <h3 class="panel-title pull-left">Student Details</h3>
-    </div>
-    <div class="row">
-      <div class="col-xs-6">
-        <label class="col-xs-12 label-control">Search</label>
-        <input class="form-control" [(ngModel)]="filterQuery" placeholder="Search by name or referenceNo or email or mobile number"/>
-      </div>
-      <div class="col-xs-2">
-        <label class="label-control">Rows on page</label>
-        <select class="form-control " style="height: 30px;" [(ngModel)]="rowsOnPage">
-          <option [ngValue]="2">2</option>
-          <option [ngValue]="5">5</option>
-          <option [ngValue]="10">10</option>
-          <option [ngValue]="15">15</option>
-        </select>
-      </div>
-      <div class="col-xs-4">
+<navbar></navbar>
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Tutorwizard CRM</h1>
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+            <h3 class="panel-title pull-left">Student Details</h3>
+        </div>
         <div class="row">
-          <label class="col-xs-12 label-control">Sort by</label>
-        </div>
-        <div class="col-xs-6">
-          <div class="row">
-            <select class="form-control " style="height: 30px;"[(ngModel)]="sortBy">
-              <option ngValue="name">Name</option>
-              <option ngValue="email">Email</option>
-              <option ngValue="std_id">Student id</option>
+          <div class="col-xs-6">
+            <label class="col-xs-12 label-control">Search</label>
+            <input class="form-control" [(ngModel)]="filterQuery" placeholder="Search by name or referenceNo or email or mobile number"/>
+          </div>
+          <div class="col-xs-2">
+            <label class="label-control">Rows on page</label>
+            <select class="form-control " style="height: 30px;" [(ngModel)]="rowsOnPage">
+              <option [ngValue]="2">2</option>
+              <option [ngValue]="5">5</option>
+              <option [ngValue]="10">10</option>
+              <option [ngValue]="15">15</option>
             </select>
           </div>
-        </div>
-        <div class="col-xs-6">
-          <div class="row">
-            <select class="form-control" style="height: 30px;"[(ngModel)]="sortOrder">
-              <option ngValue="asc">Ascending</option>
-              <option ngValue="desc">Descending</option>
-            </select>
+          <div class="col-xs-4">
+            <div class="row">
+              <label class="col-xs-12 label-control">Sort by</label>
+            </div>
+            <div class="col-xs-6">
+              <div class="row">
+                <select class="form-control " style="height: 30px;"[(ngModel)]="sortBy">
+                  <option ngValue="name">Name</option>
+                  <option ngValue="email">Email</option>
+                  <option ngValue="std_id">Student id</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="row">
+                <select class="form-control" style="height: 30px;"[(ngModel)]="sortOrder">
+                  <option ngValue="asc">Ascending</option>
+                  <option ngValue="desc">Descending</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="panel-body">
-      <table class="table table-striped" [mfData]="students | dataFilter : filterQuery" #mf="mfDataTable"
-             [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
-            <thead>
-                <tr>
-                    <th>
-                      <mfDefaultSorter by="std_id">Student id</mfDefaultSorter>
-                    </th>
-                    <th>
-                      <mfDefaultSorter by="reference">Reference</mfDefaultSorter>
-                    </th>
-                    <th>
-                      <mfDefaultSorter by="firstname">Name</mfDefaultSorter>
-                    </th>
-                    <th>
-                      <mfDefaultSorter by="school">School</mfDefaultSorter>
-                    </th>
-                    <th>
-                      <mfDefaultSorter by="dob">DOB</mfDefaultSorter>
-                    </th>
-                    <th>
-                      <mfDefaultSorter by="country_name">Country</mfDefaultSorter>
-                    </th>
-                    <th>
-                      <mfDefaultSorter by="grade">Grade</mfDefaultSorter>
-                    </th>
-                    <th>
-                      <mfDefaultSorter by="email">Email</mfDefaultSorter>
-                    </th>
-                    <th>
-                      <mfDefaultSorter by="mobile">Mobile</mfDefaultSorter>
-                    <th>
-                        Options
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let student of mf.data">
-                    <td>{{student.std_id}}</td>
-                    <td>{{student.reference}}</td>
-                    <td>{{student.firstName}}</td>
-                    <td>{{student.school}}</td>
-                    <td>{{student.dob}}</td>
-                    <td>{{student.country_name}}</td>
-                    <td>{{student.grade}}</td>
-                    <td>{{student.email}}</td>
-                    <td>{{student.mobile}}</td>
-                    <td>
-                      <a [routerLink]="['/individualstudent', student.std_id]" (click)="setId(student.std_id)">
-                          <span class="label label-success btnlabel">
-                            <i class="fa fa-eye" aria-hidden="true"></i>
-                            View or Edit
-                          </span>
-                      </a>
+        <div class="panel-body">
+          <table class="table table-striped" [mfData]="students | dataFilter : filterQuery" #mf="mfDataTable"
+                 [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+                <thead>
+                    <tr>
+                        <th>
+                          <mfDefaultSorter by="std_id">Student id</mfDefaultSorter>
+                        </th>
+                        <th>
+                          <mfDefaultSorter by="reference">Reference</mfDefaultSorter>
+                        </th>
+                        <th>
+                          <mfDefaultSorter by="firstname">Name</mfDefaultSorter>
+                        </th>
+                        <th>
+                          <mfDefaultSorter by="school">School</mfDefaultSorter>
+                        </th>
+                        <th>
+                          <mfDefaultSorter by="dob">DOB</mfDefaultSorter>
+                        </th>
+                        <th>
+                          <mfDefaultSorter by="country_name">Country</mfDefaultSorter>
+                        </th>
+                        <th>
+                          <mfDefaultSorter by="grade">Grade</mfDefaultSorter>
+                        </th>
+                        <th>
+                          <mfDefaultSorter by="email">Email</mfDefaultSorter>
+                        </th>
+                        <th>
+                          <mfDefaultSorter by="mobile">Mobile</mfDefaultSorter>
+                        <th>
+                            Options
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let student of mf.data">
+                        <td>{{student.std_id}}</td>
+                        <td>{{student.reference}}</td>
+                        <td>{{student.firstName}}</td>
+                        <td>{{student.school}}</td>
+                        <td>{{student.dob}}</td>
+                        <td>{{student.country_name}}</td>
+                        <td>{{student.grade}}</td>
+                        <td>{{student.email}}</td>
+                        <td>{{student.mobile}}</td>
+                        <td>
+                          <a [routerLink]="['/individualstudent', student.std_id]" (click)="setId(student.std_id)">
+                              <span class="label label-success btnlabel">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                View or Edit
+                              </span>
+                          </a>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="5">
+                      <mfBootstrapPaginator></mfBootstrapPaginator>
                     </td>
-                </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="5">
-                  <mfBootstrapPaginator></mfBootstrapPaginator>
-                </td>
-              </tr>
-            </tfoot>
-        </table>
+                  </tr>
+                </tfoot>
+            </table>
+        </div>
     </div>
+  </div>
 </div>
 

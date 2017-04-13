@@ -1,34 +1,34 @@
 <ul>
   <li>
   	<a routerLink="/students">
-  		<i class="fa fa-home" aria-hidden="true">
+  		<i class="fa fa-users" aria-hidden="true">
   		</i>
-      Home
+      User Details
   	</a>
   </li>
   <li>
-  	<a href="#news">
+  	<a routerLink="/communicationAll">
   		<i class="fa fa-phone" aria-hidden="true">
   		</i>
       Communication
   	</a>
   </li>
   <li>
-  	<a href="#contact">
+  	<a routerLink="/transactionAll">
   		<i class="fa fa-credit-card" aria-hidden="true">
   		</i>
-      History
+      Transaction History
   	</a>
   </li>
   <li>
-    <a routerLink="subscriptionAll">
+    <a routerLink="/subscriptionAll">
       <i class="fa fa-money" aria-hidden="true"></i>
       Subscription
     </a>
   </li>
   <!--li style="float:right"><a class="active" href="#about">About</a></li-->
   <li style="float: right">
-  	<a  href="#about">
+  	<a (click)="clicked()">
 	  	<i class="fa fa-sign-out" aria-hidden="true">
 	  	</i>
       Logout

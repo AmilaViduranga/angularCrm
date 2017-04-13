@@ -13,6 +13,7 @@ import {DataTableModule} from "angular2-datatable";
  * component imported
  */
 import { AppComponent } from './app.component';
+import {LoginComponent} from './Components/LoginComponent/login.component';
 import {IndividualUserComponent} from './Components/IndividualUserComponent/individualuser.component';
 import {BasicInfoComponent} from './Components/BasicInfoComponent/basicinfo.component';
 import {NavbarComponent} from './Components/NavbarComponent/navbar.component';
@@ -27,6 +28,9 @@ import {CommunicationComponent} from './Components/CommunicationComponent/commun
 import {HistoryComponent} from './Components/HistoryComponent/history.component';
 import {StudentHomeComponent} from './Components/StudentHomeComponent/studenthome.component';
 import {SubscriptionAllComponent} from './Components/SubscriptionAllComponent/subscriptionall.component';
+import {TransactionHistoryAllComponent} from './Components/TransactionHistoryAllComponent/transactionhistoryall.component';
+import {CommunicationAllComponent} from './Components/CommunicationAllComponent/communicationall.component';
+import {CommunicationDetailedComponent} from './Components/CommuncationDetailedComponent/communicationdetailed.component';
 /*
  * service imported
  */
@@ -36,10 +40,16 @@ import {studentService} from './Services/student.service';
  */
 import { DataFilterPipe }   from './Components/data-filter';
 import { SubscriptionFilterPipe }   from './Components/subscription-filter';
+import { TransactionFilterPipe }   from './Components/Transaction-filter';
+import {CommunicationFilterPipe} from './Components/Communication-filter';
 
 @NgModule({
   declarations: [
+    /*
+     * ui components importing
+     */
     AppComponent,
+    LoginComponent,
     IndividualUserComponent,
     BasicInfoComponent,
     NavbarComponent,
@@ -53,9 +63,17 @@ import { SubscriptionFilterPipe }   from './Components/subscription-filter';
     CommunicationComponent,
     HistoryComponent,
     StudentHomeComponent,
+    SubscriptionAllComponent,
+    TransactionHistoryAllComponent,
+    CommunicationAllComponent,
+    /*
+     * filters importing
+     */
     DataFilterPipe,
+    TransactionFilterPipe,
     SubscriptionFilterPipe,
-    SubscriptionAllComponent
+    CommunicationFilterPipe,
+    CommunicationDetailedComponent
   ],
   imports: [
     DataTableModule,
@@ -70,8 +88,12 @@ import { SubscriptionFilterPipe }   from './Components/subscription-filter';
         component: StudentHomeComponent
       },
       {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
         path: '',
-        redirectTo: '/students',
+        redirectTo: '/login',
         pathMatch: 'full'
       },
       {
@@ -81,6 +103,18 @@ import { SubscriptionFilterPipe }   from './Components/subscription-filter';
       {
         path: 'subscriptionAll',
         component: SubscriptionAllComponent
+      },
+      {
+        path: 'transactionAll',
+        component: TransactionHistoryAllComponent
+      },
+      {
+        path: 'communicationAll',
+        component: CommunicationAllComponent
+      },
+      {
+        path: 'communication/:id',
+        component: CommunicationDetailedComponent
       }
     ])
   ],

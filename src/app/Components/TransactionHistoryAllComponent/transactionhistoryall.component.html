@@ -1,0 +1,109 @@
+<navbar></navbar>
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Tutorwizard CRM</h1>
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix">
+        <h3 class="panel-title pull-left">Transactions</h3>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <label class="col-xs-12 label-control">Search</label>
+          <input class="form-control" [(ngModel)]="filterQuery" placeholder="Search by reference no or invoice no"/>
+        </div>
+        <div class="col-xs-2">
+          <label class="label-control">Rows on page</label>
+          <select class="form-control " style="height: 30px;" [(ngModel)]="rowsOnPage">
+            <option [ngValue]="2">2</option>
+            <option [ngValue]="5">5</option>
+            <option [ngValue]="10">10</option>
+            <option [ngValue]="15">15</option>
+          </select>
+        </div>
+        <div class="col-xs-4">
+          <div class="row">
+            <label class="col-xs-12 label-control">Sort by</label>
+          </div>
+          <div class="col-xs-6">
+            <div class="row">
+              <select class="form-control " style="height: 30px;"[(ngModel)]="sortBy">
+                <option ngValue="date">Date</option>
+                <option ngValue="student_id">Student id</option>
+                <option ngValue="reference">reference</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="row">
+              <select class="form-control" style="height: 30px;"[(ngModel)]="sortOrder">
+                <option ngValue="asc">Ascending</option>
+                <option ngValue="desc">Descending</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped" [mfData]="transactions | transactionFilter: filterQuery" #mf="mfDataTable"
+               [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+          <thead>
+          <tr>
+            <th>
+              <mfDefaultSorter by="student_id">Student id</mfDefaultSorter>
+            </th>
+            <th>
+              <mfDefaultSorter by="reference">reference no</mfDefaultSorter>
+            </th>
+            <th>
+              <mfDefaultSorter by="transactionID">transaction id</mfDefaultSorter>
+            </th>
+            <th>
+              <mfDefaultSorter by="invoiceNo">invoice no</mfDefaultSorter>
+            </th>
+            <th>
+              <mfDefaultSorter by="date">Date</mfDefaultSorter>
+            </th>
+            <th>
+              <mfDefaultSorter by="expire_date">Expire Date</mfDefaultSorter>
+            </th>
+            <th>
+              <mfDefaultSorter by="paid_amount">paid amount</mfDefaultSorter>
+            </th>
+            <th>
+              <mfDefaultSorter by="payment_method">payment method</mfDefaultSorter>
+            </th>
+            <th>
+              <mfDefaultSorter by="cardholder_name">card holder name</mfDefaultSorter>
+            </th>
+            <th>
+              <mfDefaultSorter by="card_no">card no</mfDefaultSorter>
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let transaction of mf.data">
+            <td>{{transaction.student_id}}</td>
+            <td>{{transaction.reference}}</td>
+            <td>{{transaction.transactionID}}</td>
+            <td>{{transaction.invoiceNo}}</td>
+            <td>{{transaction.date}}</td>
+            <td>{{transaction.expire_date}}</td>
+            <td>{{transaction.paid_amount}}</td>
+            <td>{{transaction.payment_method}}</td>
+            <td>{{transaction.cardholder_name}}</td>
+            <td>{{transaction.card_no}}</td>
+          </tr>
+          </tbody>
+          <tfoot>
+          <tr>
+            <td colspan="5">
+              <mfBootstrapPaginator></mfBootstrapPaginator>
+            </td>
+          </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
