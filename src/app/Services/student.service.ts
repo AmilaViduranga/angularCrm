@@ -93,6 +93,37 @@ export class studentService {
     }
   }
 
+  getAllFeedbacks() {
+    this.token = localStorage.getItem('token');
+    if(this.token != null) {
+      return this.http.get(this.actionUrl + 'communication/feedback/' + this.token)
+        .map(res => res.json());
+    }
+  }
+
+  getFeedbackIndividually(feedbackId) {
+    this.token = localStorage.getItem('token');
+    if(this.token != null) {
+      return this.http.get(this.actionUrl + 'communication/feedback/' + this.token + '/' + feedbackId)
+        .map(res => res.json());
+    }
+  }
+
+  getAllReportAbuses() {
+    this.token = localStorage.getItem('token');
+    if(this.token != null) {
+      return this.http.get(this.actionUrl + 'communication/report/' + this.token)
+        .map(res => res.json());
+    }
+  }
+
+  getReportAbuseIndividually(abuseId) {
+    this.token = localStorage.getItem('token');
+    if(this.token != null) {
+      return this.http.get(this.actionUrl + 'communication/report/' + this.token + '/' + abuseId)
+        .map(res => res.json());
+    }
+  }
   private handleError(error: Response) {
     console.error(error);
     return Observable.throw(error.json().error || 'Server error');

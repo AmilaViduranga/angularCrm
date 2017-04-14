@@ -13,8 +13,8 @@ import {studentService} from '../../Services/student.service';
 export class LoginComponent{
   userEmail: any;
   password: any;
-  constructor(private router: Router, private _service: studentService) {
 
+  constructor(private router: Router, private _service: studentService) {
   }
   clicked(event) {
     let scope = this;

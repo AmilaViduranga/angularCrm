@@ -6,43 +6,43 @@
     <div class="list-group" *ngIf="student">
     	<div class="list-group-item">
 	        <p class="list-group-item-text">Id</p>
-	        <h4 class="list-group-item-heading">{{student.std_id}}</h4>
+	        <h4 class="list-group-item-heading" *ngIf="student.std_id">{{student.std_id}}</h4>
 	    </div>
 	    <div class="list-group-item">
 	        <p class="list-group-item-text"> Full Name</p>
-	        <h4 class="list-group-item-heading">{{student.fullName}}</h4>
+	        <h4 class="list-group-item-heading" *ngIf="student.fullName">{{student.fullName}}</h4>
 	    </div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Family Name</p>
-        	<h4 class="list-group-item-heading">{{student.familyName}}</h4>
+        	<h4 class="list-group-item-heading" *ngIf="student.familyName">{{student.familyName}}</h4>
       	</div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Gender</p>
-        	<h4 class="list-group-item-heading">{{student.gender}}</h4>
+        	<h4 class="list-group-item-heading" *ngIf="student.gender">{{student.gender}}</h4>
       	</div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Date of Birth</p>
-        	<h4 class="list-group-item-heading">{{student.dob}}</h4>
+        	<h4 class="list-group-item-heading" *ngIf="student.dob">{{student.dob}}</h4>
       	</div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Country</p>
-        	<h4 class="list-group-item-heading">{{student.country_name}}</h4>
+        	<h4 class="list-group-item-heading" *ngIf="student.country_name">{{student.country_name}}</h4>
       	</div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Email</p>
-        	<h4 class="list-group-item-heading">{{student.email}}</h4>
+        	<h4 class="list-group-item-heading" *ngIf="student.email">{{student.email}}</h4>
       	</div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Secondry Email</p>
-        	<h4 class="list-group-item-heading">Web Developer</h4>
+        	<h4 class="list-group-item-heading" *ngIf="student.secondryEmail">Web Developer</h4>
       	</div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Mobile</p>
-        	<h4 class="list-group-item-heading">{{student.mobile}}</h4>
+        	<h4 class="list-group-item-heading" *ngIf="student.mobile">{{student.mobile}}</h4>
       	</div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Secondry Mobile</p>
-        	<h4 class="list-group-item-heading">Web Developer</h4>
+        	<h4 class="list-group-item-heading" *ngIf="student.secondryMobile">Web Developer</h4>
       	</div>
     </div>
 </div>

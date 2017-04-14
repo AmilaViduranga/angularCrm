@@ -31,6 +31,10 @@ import {SubscriptionAllComponent} from './Components/SubscriptionAllComponent/su
 import {TransactionHistoryAllComponent} from './Components/TransactionHistoryAllComponent/transactionhistoryall.component';
 import {CommunicationAllComponent} from './Components/CommunicationAllComponent/communicationall.component';
 import {CommunicationDetailedComponent} from './Components/CommuncationDetailedComponent/communicationdetailed.component';
+import {FeedbackAllComponent} from './Components/FeedbackAllComponent/feedbackall.component';
+import {FeedbackDetailedComponent} from './Components/FeedbackDetailed/feedbackdetailed.component';
+import {ReportAbuseAllComponent} from './Components/ReportAbuseAllComponent/reportabuseall.component';
+import {ReportAbuseDetailedComponent} from './Components/ReportAbuseDetailedComponent/reportabusedetailed.componenet';
 /*
  * service imported
  */
@@ -42,6 +46,7 @@ import { DataFilterPipe }   from './Components/data-filter';
 import { SubscriptionFilterPipe }   from './Components/subscription-filter';
 import { TransactionFilterPipe }   from './Components/Transaction-filter';
 import {CommunicationFilterPipe} from './Components/Communication-filter';
+import {FeedbackFilterPipe} from './Components/Feedback-filter';
 
 @NgModule({
   declarations: [
@@ -66,6 +71,10 @@ import {CommunicationFilterPipe} from './Components/Communication-filter';
     SubscriptionAllComponent,
     TransactionHistoryAllComponent,
     CommunicationAllComponent,
+    FeedbackAllComponent,
+    FeedbackDetailedComponent,
+    ReportAbuseAllComponent,
+    ReportAbuseDetailedComponent,
     /*
      * filters importing
      */
@@ -73,7 +82,8 @@ import {CommunicationFilterPipe} from './Components/Communication-filter';
     TransactionFilterPipe,
     SubscriptionFilterPipe,
     CommunicationFilterPipe,
-    CommunicationDetailedComponent
+    CommunicationDetailedComponent,
+    FeedbackFilterPipe
   ],
   imports: [
     DataTableModule,
@@ -115,6 +125,22 @@ import {CommunicationFilterPipe} from './Components/Communication-filter';
       {
         path: 'communication/:id',
         component: CommunicationDetailedComponent
+      },
+      {
+        path: 'feedbackall',
+        component: FeedbackAllComponent
+      },
+      {
+        path: 'feedback/:id',
+        component: FeedbackDetailedComponent
+      },
+      {
+        path: 'reportAbuse',
+        component: ReportAbuseAllComponent
+      },
+      {
+        path: 'reportabuse/:id',
+        component: ReportAbuseDetailedComponent
       }
     ])
   ],

@@ -6,23 +6,23 @@
     <div class="list-group">
     	<div class="list-group-item">
 	        <p class="list-group-item-text">Grade In School</p>
-	        <h4 class="list-group-item-heading">{{studentDetails.grade}}</h4>
+	        <h4 class="list-group-item-heading" *ngIf="studentDetails.grade">{{studentDetails.grade}}</h4>
 	    </div>
 	    <div class="list-group-item">
 	        <p class="list-group-item-text"> Present School name</p>
-	        <h4 class="list-group-item-heading">{{studentDetails.school}}</h4>
+	        <h4 class="list-group-item-heading" *ngIf="studentDetails.school">{{studentDetails.school}}</h4>
 	    </div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Start of School Intake</p>
-        	<h4 class="list-group-item-heading">{{studentDetails.intake_month}}</h4>
+        	<h4 class="list-group-item-heading" *ngIf="studentDetails.intake_month">{{studentDetails.intake_month}}</h4>
       	</div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Present School Type</p>
-        	<h4 class="list-group-item-heading">{{studentDetails.school_type}}</h4>
+        	<h4 class="list-group-item-heading" *ngIf="studentDetails.school_type">{{studentDetails.school_type}}</h4>
       	</div>
         <div class="list-group-item">
           <p class="list-group-item-text">School city</p>
-          <h4 class="list-group-item-heading">{{studentDetails.school_city}}</h4>
+          <h4 class="list-group-item-heading" *ngIf="studentDetails.school_city">{{studentDetails.school_city}}</h4>
         </div>
     </div>
 </div>

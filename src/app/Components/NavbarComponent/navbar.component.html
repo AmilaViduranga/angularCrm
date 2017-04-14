@@ -1,26 +1,26 @@
 <ul>
-  <li>
-  	<a routerLink="/students">
-  		<i class="fa fa-users" aria-hidden="true">
-  		</i>
+  <li [routerLinkActive]="['active']">
+    <a routerLink="/students">
+      <i class="fa fa-users" aria-hidden="true">
+      </i>
       User Details
-  	</a>
+    </a>
   </li>
-  <li>
-  	<a routerLink="/communicationAll">
-  		<i class="fa fa-phone" aria-hidden="true">
-  		</i>
+  <li [routerLinkActive]="['active']">
+    <a routerLink="/communicationAll">
+      <i class="fa fa-phone" aria-hidden="true">
+      </i>
       Communication
-  	</a>
+    </a>
   </li>
-  <li>
-  	<a routerLink="/transactionAll">
-  		<i class="fa fa-credit-card" aria-hidden="true">
-  		</i>
+  <li [routerLinkActive]="['active']">
+    <a routerLink="/transactionAll">
+      <i class="fa fa-credit-card" aria-hidden="true">
+      </i>
       Transaction History
-  	</a>
+    </a>
   </li>
-  <li>
+  <li [routerLinkActive]="['active']">
     <a routerLink="/subscriptionAll">
       <i class="fa fa-money" aria-hidden="true"></i>
       Subscription
@@ -28,10 +28,12 @@
   </li>
   <!--li style="float:right"><a class="active" href="#about">About</a></li-->
   <li style="float: right">
-  	<a (click)="clicked()">
-	  	<i class="fa fa-sign-out" aria-hidden="true">
-	  	</i>
+    <a (click)="clicked()">
+      <i class="fa fa-sign-out" aria-hidden="true">
+      </i>
       Logout
-	</a>
+  </a>
   </li>
 </ul>
+
+

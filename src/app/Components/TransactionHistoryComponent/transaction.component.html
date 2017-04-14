@@ -15,15 +15,15 @@
   </thead>
   <tbody *ngIf="transactionInfo">
     <tr *ngFor="let transaction of transactionInfo">
-      <th scope="row">{{transaction.id}}</th>
-      <td>{{transaction.invoiceNo}}</td>
-      <td>{{transaction.student_id}}</td>
-      <td>{{transaction.payment_method}}</td>
-      <td>{{transaction.date}}</td>
-      <td>{{transaction.paid_amount}}</td>
-      <td>{{transaction.paid_amount}}</td>
-      <td>{{transaction.cardholder_name}}</td>
-      <td>{{transaction.card_no}}</td>
+      <th scope="row" *ngIf="transaction.id">{{transaction.id}}</th>
+      <td *ngIf="transaction.invoiceNo">{{transaction.invoiceNo}}</td>
+      <td *ngIf="transaction.student_id">{{transaction.student_id}}</td>
+      <td *ngIf="transaction.payment_method">{{transaction.payment_method}}</td>
+      <td *ngIf="transaction.date">{{transaction.date}}</td>
+      <td *ngIf="transaction.paid_amount">{{transaction.paid_amount}}</td>
+      <td *ngIf="transaction.paid_amount">{{transaction.paid_amount}}</td>
+      <td *ngIf="transaction.cardholder_name">{{transaction.cardholder_name}}</td>
+      <td *ngIf="transaction.card_no">{{transaction.card_no}}</td>
     </tr>
   </tbody>
 </table>

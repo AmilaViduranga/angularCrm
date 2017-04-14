@@ -10,23 +10,23 @@
 	    </div>
 	    <div class="list-group-item">
 	        <p class="list-group-item-text"> Curriculum</p>
-	        <h4 class="list-group-item-heading">{{subInfo.subcription.curriculumn}}</h4>
+	        <h4 class="list-group-item-heading" *ngIf="subInfo.subcription.curriculumn">{{subInfo.subcription.curriculumn}}</h4>
 	    </div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Grade</p>
-        	<h4 class="list-group-item-heading">{{subInfo.subcription.grade}}</h4>
+        	<h4 class="list-group-item-heading" *ngIf="subInfo.subcription.grade">{{subInfo.subcription.grade}}</h4>
       	</div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Date of join</p>
-        	<h4 class="list-group-item-heading">{{subInfo.subcription.DOJ}}</h4>
+        	<h4 class="list-group-item-heading" *ngIf="subInfo.subcription.DOJ">{{subInfo.subcription.DOJ}}</h4>
       	</div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Username</p>
-        	<h4 class="list-group-item-heading">{{subInfo.subcription.email}}</h4>
+        	<h4 class="list-group-item-heading" *ngIf="subInfo.subcription.email">{{subInfo.subcription.email}}</h4>
       	</div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Password</p>
-        	<h4 class="list-group-item-heading">{{subInfo.subcription.password}}</h4>
+        	<h4 class="list-group-item-heading" *ngIf="subInfo.subcription.password">{{subInfo.subcription.password}}</h4>
       	</div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Portal Status</p>
@@ -34,7 +34,7 @@
       	</div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Payment Term</p>
-        	<h4 class="list-group-item-heading">{{subInfo.paymentTerm.paymentTerm}}</h4>
+        	<h4 class="list-group-item-heading" *ngIf="subInfo.paymentTerm.paymentTerm">{{subInfo.paymentTerm.paymentTerm}}</h4>
       	</div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Payment status</p>
@@ -42,11 +42,11 @@
       	</div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Next payment date</p>
-        	<h4 class="list-group-item-heading">{{subInfo.expiredDate.expire_date}}</h4>
+        	<h4 class="list-group-item-heading" *ngIf="subInfo.expiredDate.expire_date">{{subInfo.expiredDate.expire_date}}</h4>
       	</div>
         <div class="list-group-item">
           <p class="list-group-item-text">Next payment amount</p>
-          <h4 class="list-group-item-heading">{{subInfo.nextPayment}}</h4>
+          <h4 class="list-group-item-heading" *ngIf="subInfo.nextPayment">{{subInfo.nextPayment}}</h4>
         </div>
         <div class="list-group-item">
           <p class="list-group-item-text">Balance</p>

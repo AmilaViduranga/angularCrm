@@ -1,5 +1,5 @@
 /**
- * Created by Amila on 4/13/2017.
+ * Created by Amila on 4/14/2017.
  */
 import { Component, NgModule} from '@angular/core';
 import {studentService} from '../../Services/student.service';
@@ -7,20 +7,20 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
 
 @Component({
-  selector: 'communication-detailed',
-  templateUrl: './communicationdetailed.component.html',
-  styleUrls: ['./communicationdetailed.component.css']
+  selector: 'feedback-detailed',
+  templateUrl: './feedbackdetailed.component.html',
+  styleUrls: ['./feedbackdetailed.component.css']
 })
-export class CommunicationDetailedComponent{
-  communicationIndividual: any;
+export class FeedbackDetailedComponent{
+  feedbackIndividual: any;
 
   constructor(private _service: studentService, private activatedRoute: ActivatedRoute) {
     let scope = this;
-    this.loadDetails(this.activatedRoute).subscribe(function(comunicationId) {
-      let communicationTag = comunicationId;
-      scope._service.getCommunicationDetailsIndividual(communicationTag)
+    this.loadDetails(this.activatedRoute).subscribe(function(feedbackId) {
+      let feedbackTag = feedbackId;
+      scope._service.getFeedbackIndividually(feedbackTag)
         .subscribe(function(communicationData) {
-          scope.communicationIndividual = communicationData;
+          scope.feedbackIndividual = communicationData;
         })
     })
   };

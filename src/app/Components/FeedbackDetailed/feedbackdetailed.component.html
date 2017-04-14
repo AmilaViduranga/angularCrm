@@ -1,0 +1,46 @@
+<navbar></navbar>
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Tutorwizard CRM</h1>
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix">
+        <h3 class="panel-title pull-left">Feedback Details</h3>
+      </div>
+      <div class="list-group" *ngIf="feedbackIndividual">
+        <div *ngFor="let feedback of feedbackIndividual">
+          <div class="list-group-item">
+            <p class="list-group-item-text">id</p>
+            <h4 class="list-group-item-heading">{{feedback.id}}</h4>
+          </div>
+          <div class="list-group-item">
+            <p class="list-group-item-text">Subject</p>
+            <h4 class="list-group-item-heading">{{feedback.subject}}</h4>
+          </div>
+          <div class="list-group-item">
+            <p class="list-group-item-text">Content</p>
+            <h4 class="list-group-item-heading">{{feedback.content}}</h4>
+          </div>
+          <div class="list-group-item">
+            <p class="list-group-item-text">Student id</p>
+            <h4 class="list-group-item-heading">{{feedback.student_id}}</h4>
+          </div>
+          <div class="list-group-item">
+            <p class="list-group-item-text">Student name</p>
+            <h4 class="list-group-item-heading">{{feedback.full_name}}</h4>
+          </div>
+          <div class="list-group-item">
+            <p class="list-group-item-text">Date</p>
+            <h4 class="list-group-item-heading">{{feedback.date}}</h4>
+          </div>
+          <div class="list-group-item">
+            <p class="list-group-item-text">Status</p>
+            <h4 class="list-group-item-heading" [ngSwitch]="feedback.status">
+              <span *ngSwitchCase="1" class="label label-success">Success</span>
+              <span *ngSwitchCase="0" class="label label-danger">UnSuccess</span>
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
