@@ -124,6 +124,15 @@ export class studentService {
         .map(res => res.json());
     }
   }
+
+  addHelp(helpInstance) {
+    this.token = localStorage.getItem('token');
+    if(this.token != null) {
+      helpInstance.Token = this.token;
+      return this.http.post(this.actionUrl + 'communication/insert',helpInstance)
+        .map(res => res.json());
+    }
+  }
   private handleError(error: Response) {
     console.error(error);
     return Observable.throw(error.json().error || 'Server error');
