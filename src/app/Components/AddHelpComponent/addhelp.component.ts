@@ -13,7 +13,8 @@ import {alertService} from '../../Services/allerts.service';
   styleUrls: ['./addhelp.component.css']
 })
 export class AddHelpComponent{
-  user: any;
+  userId: any;
+  userName: any;
   title: any;
   status: any;
   communicationType: any;
@@ -23,28 +24,17 @@ export class AddHelpComponent{
   service: any;
   messageService: alertService;
 
-  constructor(private activatedRoute: ActivatedRoute, private _service: studentService, private _alert: alertService) {
+  constructor(private _service: studentService, private _alert: alertService) {
     this.service = _service;
     this.messageService = _alert;
-    activatedRoute.params.subscribe((params: Params) => {
-      if(params['id'] == 'newhelp' || params['name'] == 'newhelp') {
-        this.user = {
-          userId : null,
-          userName: null
-        }
-      } else {
-        this.user = {
-          userId : params['id'],
-          userName: params['name']
-        }
-      }
-    });
+    this.userId = localStorage.getItem('systemUserId');
+    this.userName = localStorage.getItem('systemUserName');
   };
 
   addNewHelp() {
     let data = {
-      systemUserID: this.user.userId,
-      systemUserName: this.user.userName,
+      systemUserID: this.userId,
+      systemUserName: this.userName,
       title: this.title,
       status: this.status,
       commType :this.communicationType,
@@ -52,14 +42,14 @@ export class AddHelpComponent{
       flag: this.flag,
       flagDesciption: this.flagDescription
     }
-    if(data.systemUserID === null || data.systemUserName == null){
-      alert("please enter valid user id and username");
-    } else {
+    if(data.systemUserID === localStorage.getItem('systemUserId') && data.systemUserName == localStorage.getItem('systemUserName')){
       this.service.addHelp(data)
         .subscribe(function(status) {
           alert(JSON.stringify(status));
           //scope.messageService.messageSuccess("Successfully inserted help");
         })
+    } else {
+      alert("please enter valid user id and username");
     }
   }
   toggleStatus() {

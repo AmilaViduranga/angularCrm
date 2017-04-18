@@ -23,9 +23,10 @@ export class studentService {
       password: password
     }).map(function(res) {
       let response = res.json();
-      alert(JSON.stringify(response));
       if(response.status == 200) {
         localStorage.setItem('token',response.token);
+        localStorage.setItem('systemUserId', response.SystemUserID);
+        localStorage.setItem('systemUserName', response.SystemUserName);
         return true;
       }
       return false;
