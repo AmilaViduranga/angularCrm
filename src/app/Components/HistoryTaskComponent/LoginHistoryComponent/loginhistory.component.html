@@ -1,7 +1,7 @@
-<div class="panel-body">
+<div class="panel-body" *ngIf="sessions">
   <table class="table table-striped" [mfData]="sessions" #mf="mfDataTable"
          [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
-    <thead>
+    <thead class="backThread">
     <tr>
       <th>
         <mfDefaultSorter by="id">Id</mfDefaultSorter>
@@ -12,9 +12,6 @@
       <th>
         <mfDefaultSorter by="session_end">Session end</mfDefaultSorter>
       </th>
-      <th>
-        <mfDefaultSorter by="session_token">Session token</mfDefaultSorter>
-      </th>
     </tr>
     </thead>
     <tbody>
@@ -22,7 +19,6 @@
       <td>{{session.id}}</td>
       <td>{{session.session_start}}</td>
       <td>{{session.session_end}}</td>
-      <td>{{session.session_token}}</td>
     </tr>
     </tbody>
     <tfoot>

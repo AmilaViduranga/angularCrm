@@ -27,6 +27,7 @@ export class studentService {
         localStorage.setItem('token',response.token);
         localStorage.setItem('systemUserId', response.SystemUserID);
         localStorage.setItem('systemUserName', response.SystemUserName);
+        localStorage.setItem('userId', response.userId);
         return true;
       }
       return false;
@@ -131,7 +132,7 @@ export class studentService {
   addHelp(helpInstance) {
     this.token = localStorage.getItem('token');
     if(this.token != null) {
-      helpInstance.Token = this.token;
+      helpInstance.token = this.token;
       return this.http.post(this.actionUrl + 'communication/insert',helpInstance)
         .map(res => res.json());
     }

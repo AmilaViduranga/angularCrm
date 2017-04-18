@@ -29,4 +29,14 @@ export class historyService {
       }).map(res => res.json());
     }
   }
+
+  getSpecificPasswordHistoryInfo(userId) {
+    this.token = localStorage.getItem('token');
+    if(this.token != null) {
+      return this.http.post(this.actionUrl + 'history/get_student_pw_log', {
+        student_id: userId,
+        token: this.token
+      }).map(res => res.json());
+    }
+  }
 }

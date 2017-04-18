@@ -17,6 +17,7 @@ export class SubscriptionComponent{
 		scope._service.getSubscriptionInfoOfOneStudent(userIdTags)
 			.subscribe(function(subscribeInfo) {
 			  if(subscribeInfo) {
+			    console.log(subscribeInfo.subcription);
           scope.subInfo = subscribeInfo;
         }
 			})

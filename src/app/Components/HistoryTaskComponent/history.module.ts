@@ -7,11 +7,12 @@ import {DataTableModule} from "angular2-datatable";
 import {CommunicationHistoryComponent} from './CommunicationHistoryComponent/communicationhistory.component';
 import {LoginHistoryComponent} from './LoginHistoryComponent/loginhistory.component';
 import {historyService} from '../../Services/history.service';
-
+import {PasswordHistoryComponent} from './PasswordComponent/password.component';
 @NgModule({
   declarations: [
     CommunicationHistoryComponent,
-    LoginHistoryComponent
+    LoginHistoryComponent,
+    PasswordHistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +26,8 @@ import {historyService} from '../../Services/history.service';
   bootstrap: [],
   exports: [
   	CommunicationHistoryComponent,
-    LoginHistoryComponent
+    LoginHistoryComponent,
+    PasswordHistoryComponent
   ]
 })
 export class HistoryModule { }

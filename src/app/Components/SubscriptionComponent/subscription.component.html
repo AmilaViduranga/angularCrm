@@ -3,7 +3,7 @@
   	<div class="panel-heading clearfix">
     	<h3 class="panel-title pull-left">Subscription Details</h3>
     </div>
-    <div class="list-group">
+    <div class="list-group" *ngIf="subInfo.subcription">
     	<div class="list-group-item">
 	        <p class="list-group-item-text">Stream</p>
 	        <h4 class="list-group-item-heading" *ngIf="subInfo.subcription.package">{{subInfo.subcription.package}}</h4>

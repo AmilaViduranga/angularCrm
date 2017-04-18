@@ -36,6 +36,7 @@ import {FeedbackDetailedComponent} from './Components/FeedbackDetailed/feedbackd
 import {ReportAbuseAllComponent} from './Components/ReportAbuseAllComponent/reportabuseall.component';
 import {ReportAbuseDetailedComponent} from './Components/ReportAbuseDetailedComponent/reportabusedetailed.componenet';
 import {AddHelpComponent} from './Components/AddHelpComponent/addhelp.component';
+import {HistoryMainComponent} from './Components/HistoryMainComponent/historymain.component';
 /*
  * service imported
  */
@@ -79,6 +80,7 @@ import {FeedbackFilterPipe} from './Components/Feedback-filter';
     ReportAbuseAllComponent,
     ReportAbuseDetailedComponent,
     AddHelpComponent,
+    HistoryMainComponent,
     /*
      * filters importing
      */
@@ -149,6 +151,10 @@ import {FeedbackFilterPipe} from './Components/Feedback-filter';
       {
         path: 'addhelp/:id/:name',
         component: AddHelpComponent
+      },
+      {
+        path: 'historymain',
+        component: HistoryMainComponent
       }
     ])
   ],

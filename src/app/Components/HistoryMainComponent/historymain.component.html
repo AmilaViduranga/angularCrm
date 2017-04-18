@@ -1,0 +1,24 @@
+<navbar></navbar>
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Tutorwizard CRM</h1>
+    <div id="content">
+      <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+        <li class="active"><a href="#red" data-toggle="tab">Communication history</a></li>
+        <li><a href="#orange" data-toggle="tab">Transaction history</a></li>
+        <li><a href="#yellow" data-toggle="tab">Subscription history</a></li>
+      </ul>
+      <div id="my-tab-content" class="tab-content">
+        <div class="tab-pane active" id="red">
+          <communication-all></communication-all>
+        </div>
+        <div class="tab-pane" id="orange">
+          <transaction-history></transaction-history>
+        </div>
+        <div class="tab-pane" id="yellow">
+          <subscription-all></subscription-all>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

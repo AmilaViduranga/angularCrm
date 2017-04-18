@@ -42,6 +42,11 @@ export class AddHelpComponent{
       flag: this.flag,
       flagDesciption: this.flagDescription
     }
+    if(data.flag == true) {
+      data.flag = 1;
+    } else {
+      data.flag = 0;
+    }
     if(data.systemUserID === localStorage.getItem('systemUserId') && data.systemUserName == localStorage.getItem('systemUserName')){
       this.service.addHelp(data)
         .subscribe(function(status) {
