@@ -17,7 +17,7 @@ import {Observable} from 'rxjs/Observable';
 
 export class TabComponent {
 	student: any;
-	
+
 	constructor(private _service: studentService, private activatedRoute: ActivatedRoute) {
 		let scope = this;
 		this.loadDetails(this.activatedRoute).subscribe(function(userId) {
@@ -32,7 +32,7 @@ export class TabComponent {
 	loadDetails(activatedRoute) {
 		return Observable.create(function(observer) {
 			activatedRoute.params.subscribe((params: Params) => {
-		        observer.next(params['id']);
+		        observer.next(params['stdId']);
 		        observer.complete();
 		    });
 		})

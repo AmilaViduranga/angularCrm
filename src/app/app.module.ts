@@ -40,6 +40,8 @@ import {AddHelpComponent} from './Components/AddHelpComponent/addhelp.component'
  * service imported
  */
 import {studentService} from './Services/student.service';
+import {alertService} from './Services/allerts.service';
+import {serverAddressesService} from './Services/serverAddress.service';
 /*
  * filters imported
  */
@@ -109,7 +111,7 @@ import {FeedbackFilterPipe} from './Components/Feedback-filter';
         pathMatch: 'full'
       },
       {
-        path: 'individualstudent/:id',
+        path: 'individualstudent/:id/:stdId',
         component: IndividualUserComponent,
       },
       {
@@ -151,7 +153,9 @@ import {FeedbackFilterPipe} from './Components/Feedback-filter';
     ])
   ],
   providers: [
-    studentService
+    studentService,
+    alertService,
+    serverAddressesService
   ],
   bootstrap: [AppComponent]
 })

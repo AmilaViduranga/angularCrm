@@ -24,11 +24,10 @@ export class SubscriptionComponent{
   loadDetails(activatedRoute) {
 		return Observable.create(function(observer) {
 			activatedRoute.params.subscribe((params: Params) => {
-		        observer.next(params['id']);
+		        observer.next(params['stdId']);
 		        observer.complete();
 		    });
 		})
 	}
 }
 
-	

@@ -21,7 +21,7 @@
       <td *ngIf="transaction.payment_method">{{transaction.payment_method}}</td>
       <td *ngIf="transaction.date">{{transaction.date}}</td>
       <td *ngIf="transaction.paid_amount">{{transaction.paid_amount}}</td>
-      <td *ngIf="transaction.paid_amount">{{transaction.paid_amount}}</td>
+      <td><span class="label label-success">Success</span></td>
       <td *ngIf="transaction.cardholder_name">{{transaction.cardholder_name}}</td>
       <td *ngIf="transaction.card_no">{{transaction.card_no}}</td>
     </tr>

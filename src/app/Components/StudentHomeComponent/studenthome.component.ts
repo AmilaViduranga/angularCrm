@@ -25,6 +25,7 @@ export class StudentHomeComponent{
     this._service.getAllStudents()
       .subscribe(
         (students) => {
+          console.log(students);
           this.students = students;
         }
       );

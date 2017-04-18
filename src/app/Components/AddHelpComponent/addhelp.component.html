@@ -13,19 +13,19 @@
             <div class="form-group">
               <label class="col-xs-3 control-label">User Id</label>
               <div class="col-xs-9">
-                <input type="text" class="form-control" placeholder="User id"  value="{{user.userId}}"disabled/>
+                <input type="text" class="form-control" placeholder="User id"  value="{{user.userId}}" required/>
               </div>
             </div>
             <div class="form-group">
               <label class="col-xs-3 control-label">User name</label>
               <div class="col-xs-9">
-                <input type="text" class="form-control" placeholder="User name" value="{{user.userName}}" disabled>
+                <input type="text" class="form-control" placeholder="User name" value="{{user.userName}}" required>
               </div>
             </div>
             <div class="form-group">
               <label class="col-xs-3 control-label">Title</label>
               <div class="col-xs-9">
-                <input type="text" class="form-control" placeholder="Title" [(ngModel)] = "title" name="title">
+                <input type="text" class="form-control" placeholder="Title" [(ngModel)] = "title" name="title" required>
               </div>
             </div>
             <div class="form-group">

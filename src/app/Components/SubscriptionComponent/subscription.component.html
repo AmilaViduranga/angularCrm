@@ -6,7 +6,7 @@
     <div class="list-group">
     	<div class="list-group-item">
 	        <p class="list-group-item-text">Stream</p>
-	        <h4 class="list-group-item-heading">John Smith</h4>
+	        <h4 class="list-group-item-heading" *ngIf="subInfo.subcription.package">{{subInfo.subcription.package}}</h4>
 	    </div>
 	    <div class="list-group-item">
 	        <p class="list-group-item-text"> Curriculum</p>
@@ -30,7 +30,10 @@
       	</div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Portal Status</p>
-        	<h4 class="list-group-item-heading">Web Developer</h4>
+          <h4 class="list-group-item-heading" *ngIf="subInfo.subcription.userStatus" [ngSwitch]="subInfo.subcription.userStatus">
+            <span *ngSwitchCase="0" class="label label-danger">Deactivated</span>
+            <span *ngSwitchCase="1" class="label label-success">Activated</span>
+          </h4>
       	</div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Payment Term</p>
@@ -38,7 +41,11 @@
       	</div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Payment status</p>
-        	<h4 class="list-group-item-heading">Web Developer</h4>
+        	<h4 class="list-group-item-heading" *ngIf="subInfo.subcription.paymetStatus" [ngSwitch]="subInfo.subcription.paymetStatus">
+            <span *ngSwitchCase="0" class="label label-danger">not paid</span>
+            <span *ngSwitchCase="1" class="label label-success">Paid</span>
+            <span *ngSwitchCase="2" class="label label-primary">Overdue</span>
+          </h4>
       	</div>
       	<div class="list-group-item">
         	<p class="list-group-item-text">Next payment date</p>
@@ -50,7 +57,7 @@
         </div>
         <div class="list-group-item">
           <p class="list-group-item-text">Balance</p>
-          <h4 class="list-group-item-heading">Web Developer</h4>
+          <h4 class="list-group-item-heading" *ngIf="subInfo.subcription.balance">{{subInfo.subcription.balance}}</h4>
         </div>
     </div>
 </div>

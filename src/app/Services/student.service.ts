@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
+import {serverAddressesService} from './serverAddress.service';
 
 @Injectable()
 export class studentService {
@@ -9,8 +10,8 @@ export class studentService {
   private actionUrl: string;
   private headers: Headers;
 
-  constructor(private http: Http) {
-    this.actionUrl = 'http://localhost:8009/api/';
+  constructor(private http: Http, private serverAddress:serverAddressesService) {
+    this.actionUrl = serverAddress.actionUrl;
     this.headers = new Headers();
     this.headers.append('Content-Type', 'application/json');
     this.headers.append('Accept', 'application/json');
@@ -22,6 +23,7 @@ export class studentService {
       password: password
     }).map(function(res) {
       let response = res.json();
+      alert(JSON.stringify(response));
       if(response.status == 200) {
         localStorage.setItem('token',response.token);
         return true;
@@ -133,6 +135,7 @@ export class studentService {
         .map(res => res.json());
     }
   }
+
   private handleError(error: Response) {
     console.error(error);
     return Observable.throw(error.json().error || 'Server error');

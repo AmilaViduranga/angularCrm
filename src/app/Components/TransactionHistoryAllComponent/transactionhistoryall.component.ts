@@ -25,6 +25,7 @@ export class TransactionHistoryAllComponent{
     this._service.getTransactionInfo()
       .subscribe(
         (transactions) => {
+          console.log(transactions);
           this.transactions = transactions;
         }
       );
